@@ -12,5 +12,19 @@
                 components="[group:wb-aem-test]">
             </par>
         </page>
+        <test-page jcr:primaryType="nt:unstructured">
+            <par-one
+                    jcr:primaryType="nt:unstructured"
+                    components="[/libs/foundation/components/textimage,/libs/foundation/components/image,/libs/foundation/components/list,/libs/foundation/components/title]">
+            </par-one>
+            <par-two
+                    jcr:primaryType="nt:unstructured"
+                    components="[/libs/foundation/components/download,/libs/foundation/components/reference,/libs/foundation/components/sitemap]">
+            </par-two>
+            <par-three
+                    jcr:primaryType="nt:unstructured"
+                    components="[group:wb-aem-test]">
+            </par-three>
+        </test-page>
     </jcr:content>
 </jcr:root>
