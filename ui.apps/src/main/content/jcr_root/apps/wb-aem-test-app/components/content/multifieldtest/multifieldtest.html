@@ -1,0 +1,16 @@
+<sly data-sly-use.multiItemsObj="com.gajaharan.core.models.TouchMultiComponent"></sly>
+
+<sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+    <h1 data-sly-test="${!multiItemsObj.multiFieldItems}">
+        Please add title, text and image here
+    </h1>
+</sly>
+
+
+<sly data-sly-test="${multiItemsObj.multiFieldItems}" data-sly-list.item="${multiItemsObj.multiFieldItems}">
+    <h1>${item.title}</h1>
+    <div>
+        ${item.text @ context='html'}
+    </div>
+    <img data-sly-test="${item.image}" src="${item.image @ context='html'}"/>
+</sly>

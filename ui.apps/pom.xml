@@ -126,6 +126,13 @@
                             <target>/apps/wb-aem-test-app/install</target>
                         </embedded>
                     </embeddeds>
+                    <subPackages>
+                        <subPackage>
+                            <groupId>com.adobe.acs</groupId>
+                            <artifactId>acs-aem-commons-content</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                    </subPackages>
                 </configuration>
             </plugin>
         </plugins>
@@ -158,8 +165,8 @@
                             <failOnError>true</failOnError>
                             <failOnMissingEmbed>true</failOnMissingEmbed>
                         </configuration>
-                     </plugin>
-                 </plugins>
+                    </plugin>
+                </plugins>
             </build>
         </profile>
         <profile>
@@ -185,8 +192,8 @@
                             <failOnError>true</failOnError>
                             <failOnMissingEmbed>true</failOnMissingEmbed>
                         </configuration>
-                     </plugin>
-                 </plugins>
+                    </plugin>
+                </plugins>
             </build>
         </profile>
     </profiles>
@@ -200,7 +207,17 @@
             <artifactId>wb-aem-test-62.core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>uber-jar</artifactId>
+            <classifier>apis</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-content</artifactId>
+            <type>content-package</type>
+            <classifier>min</classifier>
+        </dependency>
         <dependency>
             <groupId>com.adobe.aem</groupId>
             <artifactId>aem-api</artifactId>
