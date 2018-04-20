@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-04-20T22:12:29.925+01:00"
+        cq:lastModified="{Date}2018-04-20T22:22:30.699+01:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/wb-aem-test-app/templates/page-test"
         jcr:primaryType="cq:PageContent"
@@ -31,6 +31,14 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wb-aem-test-app/components/content/multifieldtest"
                 multifieldtest="[{&quot;title&quot;:&quot;test1&quot;\,&quot;text&quot;:&quot;Test1&quot;\,&quot;file&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Test2&quot;\,&quot;text&quot;:&quot;Test2&quot;\,&quot;file&quot;:&quot;&quot;}]"/>
+            <listchildpagetest
+                jcr:created="{Date}2018-04-20T22:22:18.934+01:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-04-20T22:22:30.698+01:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wb-aem-test-app/components/content/listchildpagetest"
+                selectedpath="/content/wb-aem-test-app"/>
         </par-three>
     </jcr:content>
 </jcr:root>

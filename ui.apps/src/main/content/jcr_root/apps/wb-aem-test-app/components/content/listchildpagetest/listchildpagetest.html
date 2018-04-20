@@ -1,0 +1,18 @@
+<sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+    <h1 data-sly-test="${!properties.selectedpath}">
+        Selected a path in the dialog to show child pages
+    </h1>
+</sly>
+
+<sly data-sly-test="${properties.selectedpath}">
+    <sly data-sly-use.childpages="${'com.gajaharan.core.models.ChildPageListComponent' @ selectedPath=properties.selectedpath}"></sly>
+
+    These are the child pages for the following path " ${properties.selectedpath} "
+    <ul data-sly-list.child="${childpages.ListChildren}">
+        <li> ${child}</li>
+    </ul>
+
+</sly>
+
+
+
