@@ -62,12 +62,37 @@ public class ChildPageListComponentTest {
         when(resource.getResourceResolver()).thenReturn(resourceResolver);
         when(resourceResolver.getResource(SELECTED_PATH)).thenReturn(resource);
         when(resource.listChildren()).thenReturn(items);
-        when(items.hasNext()).thenReturn(true);
+        when(items.hasNext()).thenReturn(true, false);
         when(items.next()).thenReturn(resource);
         when(resource.adaptTo(Node.class)).thenReturn(node);
+    }
 
+    @Test
+    public void returnsNoChildWithInvlaidSelectedPath() throws Exception {
+        when(bindings.get("selectedPath")).thenReturn("");
+        when(node.getProperty(JCR_PRIMARY_TYPE)).thenReturn(property);
+        when(property.getString()).thenReturn(JCR_PAGE_TYPE);
+        when(resource.getName()).thenReturn(FIRST_CHILD_PAGE);
 
+        childPageListComponent.activate();
 
+        List<String> list = childPageListComponent.getListChildren();
+
+        assertEquals(0, list.size());
+    }
+
+    @Test
+    public void returnsNoChildInSelectedPath() throws Exception {
+        when(items.hasNext()).thenReturn(false);
+        when(node.getProperty(JCR_PRIMARY_TYPE)).thenReturn(property);
+        when(property.getString()).thenReturn(JCR_PAGE_TYPE);
+        when(resource.getName()).thenReturn(FIRST_CHILD_PAGE);
+
+        childPageListComponent.activate();
+
+        List<String> list = childPageListComponent.getListChildren();
+
+        assertEquals(0, list.size());
     }
 
     @Test
@@ -75,13 +100,11 @@ public class ChildPageListComponentTest {
         when(node.getProperty(JCR_PRIMARY_TYPE)).thenReturn(property);
         when(property.getString()).thenReturn(JCR_PAGE_TYPE);
         when(resource.getName()).thenReturn(FIRST_CHILD_PAGE);
-        when(items.hasNext()).thenReturn(false);
 
         childPageListComponent.activate();
 
         List<String> list = childPageListComponent.getListChildren();
 
-        System.out.println(list.size());
-        //assertEquals(1, list.size());
+        assertEquals(1, list.size());
     }
 }

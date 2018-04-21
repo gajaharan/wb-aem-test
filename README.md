@@ -1,6 +1,22 @@
-# Sample AEM project template
+# Whitbread AEM Test
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+
+The solution package is done in AEM 6.2 (Using HTL and TouchUI) and have met the following criteria:
+
+1. Create a Page template with with header, footer and a body area with two Iparsys
+2. Create a custom Multi-Field component that contains: Title, Rich Text Area, Image
+3. Create a custom component that consume an OSGi bundle
+
+However encountered issues with AEM 6.2 and assumptions.
+* I believe the Touch UI Mult-field (using ASC-common) has an issue with using image (granite fileupload) as sometimes you will see drop area and sometimes you will see button to upload a file.
+* Touch UI Dialog shows the fields out of alignment due to dialog size. The Dialog size can only be changed via javascript.
+* File upload does not work properly in multi field.
+* Also ASC saves the file name property to an string array instead of the file reference.
+* I have not done class ui dialog for the components as AEM is moving towards Touch UI.
+
+There is already a test page setup and you will be able to create a new template based on requirement 1 above.
+http://localhost:4502/editor.html/content/wb-aem-test-app/wb-test.html
+
 
 ## Modules
 
@@ -9,8 +25,6 @@ The main parts of the template are:
 * core: Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
 * ui.apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, templates, runmode specific configs as well as Hobbes-tests
 * ui.content: contains sample content using the components from the ui.apps
-* ui.tests: Java bundle containing JUnit tests that are executed server-side. This bundle is not to be deployed onto production.
-* ui.launcher: contains glue code that deploys the ui.tests bundle (and dependent bundles) to the server and triggers the remote JUnit execution
 
 ## How to build
 

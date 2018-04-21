@@ -1,6 +1,7 @@
 package com.gajaharan.core.models;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +23,8 @@ public class TouchMultiComponent extends WCMUsePojo {
 
         JSONObject jObject;
         try{
-            String[] itemsProps = getProperties().get("multifieldtest", String[].class);
+            String[] itemsProps = getProperties().get("multifieldtest", new String[0]);
+
 
             if (itemsProps == null) {
                 LOGGER.info("There are no multifield properties") ;
@@ -44,8 +46,8 @@ public class TouchMultiComponent extends WCMUsePojo {
                     multiFieldItems.add(menuItem);
                 }
             }
-        }catch(Exception e){
-            LOGGER.error("Exception while multifield data {}", e.getMessage(), e);
+        }catch(JSONException ex){
+            LOGGER.error("Exception while multifield data {}", ex.getMessage(), ex);
         }
         return multiFieldItems;
     }
