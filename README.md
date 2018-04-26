@@ -10,7 +10,9 @@ The solution package is done in AEM 6.2 (Using HTL and TouchUI) and have met the
 However encountered issues with AEM 6.2 and assumptions.
 * I believe the Touch UI Mult-field (using ASC-common) has an issue with using image (granite fileupload) as sometimes you will see drop area and sometimes you will see button to upload a file.
 * Touch UI Dialog shows the fields out of alignment due to dialog size. The Dialog size can only be changed via javascript.
-* File upload does not work properly in multi field.
+* File upload does not work properly in multi field. This is because the feature is not supported. please see link below
+https://github.com/Adobe-Consulting-Services/acs-aem-commons/issues/1035
+*Will try to use Image component when back from holiday.
 * Also ASC saves the file name property to an string array instead of the file reference.
 * I have not done class ui dialog for the components as AEM is moving towards Touch UI.
 
